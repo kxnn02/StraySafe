@@ -162,6 +162,11 @@ a {
 
 .hero p {
     width: 500px;
+    font-size: var(--font-m);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
 }
 
 .hero .button-primary {
