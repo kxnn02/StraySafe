@@ -50,6 +50,11 @@ spacing
     --color-success: #48bb78;   /* green for success */
     --color-warning: #ecc94b;   /* yellow for warning */
     --color-error: #e53e3e;     /* red for errors/alerts */
+
+    /* Shadow */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2)
     
 }
 
@@ -64,6 +69,7 @@ spacing
 body {
   font-family: var(--font-body);
   font-weight: var(--weight-regular);
+  background-color: var(--color-bg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -149,15 +155,35 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 7rem;
+    margin-top: 5rem;
     text-align: center;
     
 }
 
 .hero p {
     width: 500px;
+    font-size: var(--font-m);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
 }
 
 .hero .button-primary {
     margin-top: var(--space-l);
 }
+
+.hero-img {
+    width: 350px;
+    height: 250px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+}
+
+.hero-img-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
