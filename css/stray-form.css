@@ -1,0 +1,84 @@
+.form-container {
+  max-width: 600px;
+  margin: var(--space-xl) auto;
+  padding: var(--space-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  border-radius: 8px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-l);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-m);
+}
+
+legend {
+  font-family: var(--font-heading);
+  font-size: var(--font-m);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  padding: 0 var(--space-xs);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-s);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--space-s);
+  font-size: var(--font-m);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-bottom: var(--space-m);
+  background: var(--color-bg);
+  color: var(--color-text);
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(44, 122, 123, 0.2);
+}
+
+.submit-btn {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-m);
+  font-weight: var(--weight-semibold);
+  padding: var(--space-s) var(--space-l);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+}

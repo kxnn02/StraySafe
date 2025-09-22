@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/pet-form.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/pet-form.css" />
+  </head>
+  <body>
+ <div class="form-container">
+    <h1>Pet Registration</h1> 
+    <form>
+      <fieldset>
+        <legend>Owner Information</legend>
+        <label for="owner-name">Full Name</label>
+        <input type="text" id="owner-name" name="owner-name" required>
+
+        <label for="contact-number">Contact Number</label>
+        <input type="tel" id="contact-number" name="contact-number" pattern="[0-9]{11}" placeholder="09XXXXXXXXX" required>
+
+        <label for="email">Email (optional)</label>
+        <input type="email" id="email" name="email">
+      </fieldset>
+
+      <fieldset>
+        <legend>Pet Information</legend>
+        <label for="pet-name">Pet Name</label>
+        <input type="text" id="pet-name" name="pet-name" required>
+
+        <label for="species">Species</label>
+        <select id="species" name="species" required>
+          <option value="">Select species</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="e.g., 2 years or 5 months" required>
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="pet-photo">Upload Pet Photo</label>
+        <input type="file" id="pet-photo" name="pet-photo" accept="image/*" required>
+      </fieldset>
+
+      <button type="submit" class="submit-btn">Register Pet</button>
+    </form>
+  </div>
+  </body>
 </html>
