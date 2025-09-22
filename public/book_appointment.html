@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="book_appointment.css">
+</head>
+<body>
+
+    <h2>Book an Appointment</h2>
+
+    <p id="error" style="color: red;"></p>
+    <p id="success" style="color: green;"></p>
+
+    <form action="../src/book_appointment.php" method="POST">
+        <label for="dentist_id">Select Dentist:</label>
+        <select name="dentist_id" id="dentistDropdown" required></select>
+
+        <label for="appointment_date">Choose Date:</label>
+        <input type="date" id="appointment_date" name="appointment_date" required min="">
+
+        <label for="appointment_time">Choose Time:</label>
+        <input type="time" name="appointment_time" required>
+
+        <label for="reason">Reason for Appointment:</label>
+        <textarea name="reason" placeholder="Enter reason here..." required></textarea>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <script>
+        // Fetch dentists dynamically from the database
+        fetch("../src/get_dentists.php")
+            .then(response => response.json())
+            .then(dentists => {
+                const dropdown = document.getElementById("dentistDropdown");
+                dentists.forEach(dentist => {
+                    const option = document.createElement("option");
+                    option.value = dentist.dentist_id;
+                    option.textContent = dentist.name;
+                    dropdown.appendChild(option);
+                });
+            })
+            .catch(error => console.error("Error fetching dentists:", error));
+
+        // Set today's date as the minimum selectable date
+        const today = new Date().toISOString().split("T")[0];
+        document.getElementById("appointment_date").setAttribute("min", today);
+        
+            // Auto-fill selected date from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedDate = urlParams.get("date");
+
+        if (selectedDate) {
+            document.getElementById("appointment_date").value = selectedDate;
+        }
+        
+        
+        // Display success/error messages
+        const error = urlParams.get("error");
+        const success = urlParams.get("success");
+
+        if (error === "unavailable") {
+            document.getElementById("error").textContent = "❌ Selected time slot is unavailable.";
+        } else if (error === "failed") {
+            document.getElementById("error").textContent = "❌ Booking failed. Please try again.";
+        }
+
+        if (success === "booked") {
+            document.getElementById("success").textContent = "✅ Appointment booked successfully!";
+        }
+    </script>
+</body>
+</html>

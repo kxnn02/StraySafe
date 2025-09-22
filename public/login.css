@@ -1,0 +1,73 @@
+/* Apply general styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Center the login container */
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* Style input fields */
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    display: block;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add hover & focus effects */
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0px 0px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Style login button */
+.login-btn {
+    width: 100%;
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+}
+
+/* Style register text */
+.register-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}

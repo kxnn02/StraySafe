@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="student_dashboard.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="menu-icon" id="toggle">☰</div>
+            </div>
+            <div class="header-right">
+                <h2>San Sebastian College Recoletos - Manila Dental Clinic Appointment</h2>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="Sidebar" id="sidebar">
+            <div class="logo">
+                <img src="http://localhost/dental-clinic-system/uploads/SSCR-LOGO.png" alt="Logo">
+                <h2>Dental Clinic</h2>
+            </div>
+            <div class="user">
+                <img src="http://localhost/dental-clinic-system/uploads/default-avatar-profile-icon.png" alt="User">
+                <span class="username" id="studentName"></span>
+            </div>
+            <nav class="sidebar-navigation">
+                <a href="book_appointment.html">
+                    <img src="http://localhost/dental-clinic-system/uploads/default-avatar-profile-icon.png" alt="Profile">Profile
+                </a>
+                <a href="upcoming_student_appointments.html">
+                    <img src="http://localhost/dental-clinic-system/uploads/appointment.png" alt="Appointment">Upcoming Appointments
+                </a>
+                <a href="../src/logout.php" class="logout-button">
+                    <img src="http://localhost/dental-clinic-system/uploads/logout.png" alt="Logout">Sign Out
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>BOOK AN APPOINTMENT</h2>
+            <div class="calendar-container">
+                <h3 id="calendarTitle"></h3>
+                <button onclick="changeMonth(-1)">⬅ Previous</button>
+                <button onclick="changeMonth(1)">Next ➡</button>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Sunday</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sidebar Toggle Script -->
+    <script>
+        const menuIcon = document.getElementById("toggle");
+        const sidebar = document.getElementById("sidebar");
+
+        menuIcon.addEventListener("click", () => {
+            sidebar.classList.toggle("hidden");
+        });
+    </script>
+
+    <!-- Fetch Logged-in User's Name -->
+    <script>
+        fetch("../src/get_user.php")
+            .then(response => response.json())
+            .then(user => {
+                if (user.name) {
+                    document.getElementById("studentName").textContent = user.name;
+                } else {
+                    document.getElementById("studentName").textContent = "Guest"; // Fallback name
+                }
+            })
+            .catch(error => console.error("Error fetching username:", error));
+    </script>
+
+    <!-- Dynamic Calendar Script -->
+    <script>
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+
+        function generateCalendar(month, year) {
+    const calendarBody = document.getElementById("calendarBody");
+    const calendarTitle = document.getElementById("calendarTitle");
+    calendarBody.innerHTML = ""; // Clear previous table
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const totalDays = new Date(year, month + 1, 0).getDate(); // Get total days in month
+    const today = new Date().setHours(0, 0, 0, 0); // Normalize today's date for comparison
+
+    calendarTitle.textContent = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(year, month));
+
+    let row = document.createElement("tr");
+
+    // Empty cells before the first day
+    for (let i = 0; i < firstDay; i++) {
+        row.innerHTML += "<td></td>";
+    }
+
+    for (let day = 1; day <= totalDays; day++) {
+        const date = new Date(year, month, day).setHours(0, 0, 0, 0); // Normalize date for accurate comparison
+        const formattedDate = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
+        // Disable past dates
+        if (date < today) {
+            row.innerHTML += `<td class="disabled">${day}</td>`;
+        } else {
+            row.innerHTML += `<td class="clickable"><a href="book_appointment.html?selected_date=${formattedDate}">${day}</a></td>`;
+        }
+
+        if ((firstDay + day - 1) % 7 === 6) {
+            calendarBody.appendChild(row);
+            row = document.createElement("tr");
+        }
+    }
+    calendarBody.appendChild(row);
+}
+
+
+        function changeMonth(step) {
+            currentMonth += step;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        generateCalendar(currentMonth, currentYear); // Load current month on page load
+    </script>
+</body>
+</html>
