@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/stray-form.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report a Stray</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/stray-form.css" />
 </head>
 <body>
-    
+  <div class="form-container">
+    <h1>Report a Stray</h1>
+    <form>
+      <fieldset>
+        <legend>Stray Information</legend>
+
+        <label for="species">Species</label>
+        <select id="species" name="species" required>
+          <option value="">Select species</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="location">Location Found</label>
+        <input type="text" id="location" name="location" placeholder="Street, City" required>
+
+        <label for="condition">Condition / Notes</label>
+        <textarea id="condition" name="condition" rows="4" placeholder="Describe the stray’s condition, injuries, or behavior"></textarea>
+
+        <label for="stray-photo">Upload Photo</label>
+        <input type="file" id="stray-photo" name="stray-photo" accept="image/*" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your Information (optional)</legend>
+
+        <label for="reporter-name">Full Name</label>
+        <input type="text" id="reporter-name" name="reporter-name">
+
+        <label for="reporter-phone">Contact Number</label>
+        <input 
+          type="tel" 
+          id="reporter-phone" 
+          name="reporter-phone" 
+          placeholder="09XXXXXXXXX"
+          pattern="[0-9]{11}" 
+          maxlength="11"
+          inputmode="numeric">
+
+        <label for="reporter-email">Email</label>
+        <input type="email" id="reporter-email" name="reporter-email" placeholder="example@email.com">
+      </fieldset>
+
+      <button type="submit" class="submit-btn">Submit Report</button>
+    </form>
+  </div>
 </body>
 </html>
