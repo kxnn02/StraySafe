@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Pet Forms</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/lost-and-found-forms.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Lost Pet Forms</h2>
+            <div class="content">
+
+                <div class="photo">
+                    <label for="lost-photo" class="pet-photo">
+                        <div class="photo-placeholder"></div>
+                        <span>Upload the Photo of your Lost Pet</span>
+                    </label>
+                    <input type="file" id="pet-photo" accept="image/*">
+                </div>
+
+                <form class="lost-pet-form">
+                    <fieldset>
+                        <legend>Pet Information</legend>
+                        <input type="text" placeholder="PET ID (If Register)" required>
+                        <input type="text" placeholder="Name" required>
+                        <input type="text" placeholder="Last Seen" required>
+                        <input type="date" placeholder="Date Lost" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Owner Information</legend>
+                        <input type="text" placeholder="Owner Contact" required>
+                    </fieldset>
+
+                    <button type="submit">Submit</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
