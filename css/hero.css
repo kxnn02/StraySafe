@@ -1,3 +1,7 @@
+body {
+    min-height: 120vh;
+}
+
 .nav {
     display: flex;
     list-style: none;
@@ -17,16 +21,10 @@
     justify-content: space-between;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-s);
-    margin-left: 4rem;
-    font-size: var(--font-s);
-}
 
 .img-logo {
-    width: 75px;
+    width: 150px;
+    margin-left: 6rem;
 }
 
 .hero {
@@ -54,7 +52,7 @@
 
 .hero-img {
     width: 350px;
-    height: 250px;
+    height: 300px;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
     object-fit: cover;
