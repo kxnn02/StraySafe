@@ -3,16 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register your pet or a stray animal</title>
+    <title>Register Pet - StraySafe</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="nav-back">
+            ← Back to Home
+        </a>
+    </header>
+
+    <!-- Main Content -->
     <div class="hero-container">
-        <h1>Are you registering a stray or your own pet?</h1>
-        <div class="button-container">
-            <a href="stray-form.html" class="button-primary">Stray</a>
-            <a href="pet-form.html" class="button-primary">Own Pet</a>
+        <h1>Choose Registration Type</h1>
+        <p class="subtitle">Help us provide the best care by letting us know if you're registering your own pet or reporting a stray animal in your community.</p>
+        
+        <div class="choice-container">
+            <a href="stray-form.html" class="choice-card">
+                <div class="choice-icon">🏠</div>
+                <h2>Stray Animal</h2>
+                <p>Report a stray animal in your barangay that needs care, vaccination, or medical attention from the community.</p>
+            </a>
+            
+            <a href="pet-form.html" class="choice-card">
+                <div class="choice-icon">🐾</div>
+                <h2>My Pet</h2>
+                <p>Register your own pet to track health records, vaccinations, and help build a safer community database.</p>
+            </a>
+        </div>
+
+        <div class="cta-section">
+            <h3>Why Register?</h3>
+            <p>Registration helps our barangay track pet health, prevent disease outbreaks, and ensure every animal gets the care they need. Together, we create safer communities for both pets and people.</p>
         </div>
     </div>
 </body>
