@@ -44,7 +44,7 @@ spacing
     /* Colors */
     --color-primary: #2c7a7b;   /* teal */
     --color-secondary: #319795; /* lighter teal */
-    --color-accent: #ff8a65;;    /* warm coral orange */
+    --color-accent: #f6e05e;    /* soft yellow*/
     --color-bg: #f7fafc;        /* light gray background */
     --color-surface: #ffffff;   /* white cards/sections */
     --color-border: #e2e8f0;    /* subtle border gray */
@@ -57,7 +57,7 @@ spacing
     /* Shadow */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2)
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
     
 }
 
@@ -86,35 +86,39 @@ p {
 }
 
 .button-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary); /* Use accent for action buttons */
     color: var(--color-surface);
-    padding: var(--space-s);
-    width: 175px;
-    text-align: center;
+    padding: var(--space-s) var(--space-xl);
     border-radius: 12px;
-    font-weight: var(--weight-medium);
+    font-weight: var(--weight-semibold);
     border: none;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .button-primary:hover {
     background-color: var(--color-secondary);
+    transform: translateY(-1px);
 }
 
 .button-secondary {
-  background: var(--color-accent);
-  color: var(--color-text);
-  padding: var(--space-s);
-  width: 150px;
-  border-radius: 12px;
-  font-weight: var(--weight-medium);
-  border: none;
-  cursor: pointer;
-  text-align: center;
+    background: var(--color-accent); /* Use primary for secondary actions */
+    color: var(--color-text);
+    padding: var(--space-s) var(--space-xl);
+    border-radius: 12px;
+    font-weight: var(--weight-semibold);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .button-secondary:hover {
-  background: #ecc94b; /* darker yellow */
+    background-color: #ecc94b;
+    transform: translateY(-1px);
 }
 
 a {
