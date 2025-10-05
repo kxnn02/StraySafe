@@ -139,3 +139,24 @@ button:hover {
     background: #00796b;
     transform: translateY(-2px);
 }
+
+.back-btn {
+    display: inline-block;
+    background: #009688;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 150, 136, 0.3);
+}
+
+.back-btn:hover {
+    background: #00796b;
+    transform: translateY(-2px);
+}
