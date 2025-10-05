@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background: #fff;
+    background: #f3f8f8; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,31 +14,37 @@ body {
 }
 
 .container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
     width: 90%;
     max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .form-box {
-    background: #d9d9d9;
-    padding: 30px;
-    border-radius: 8px;
+    background: #e0f2f2; 
+    padding: 35px;
+    border-radius: 10px;
+    border-left: 6px solid #009688; 
 }
 
 .form-box h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    color: #006d68;
+    font-size: 24px;
+    letter-spacing: 0.5px;
 }
 
 .content {
     display: flex;
-    gap: 30px;
+    gap: 35px;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
 
 .photo {
     flex: 1;
@@ -46,64 +52,90 @@ body {
     text-align: center;
 }
 
-.pet-photo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-
 .photo-placeholder, .pet-photo img {
     width: 220px;
     height: 180px;
-    background: #bfbfbf;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    background: #c6e6e6;
+    border: 2px solid #009688;
+    border-radius: 8px;
     margin-bottom: 10px;
     object-fit: cover;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pet-photo label {
+    color: #00796b;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.pet-photo label:hover {
+    color: #004d40;
 }
 
 input[type="file"] {
     display: none;
 }
 
+
 .lost-pet-form, .found-pet-form {
     flex: 1.5;
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 fieldset {
+    border: 2px solid #a7d5d5;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f9ffff;
+}
+
+legend {
+    color: #00796b;
     font-weight: bold;
-    margin-bottom: 8px;
+    padding: 0 10px;
 }
 
 input[type="text"], textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
+    padding: 10px 12px;
+    border: 1px solid #a7d5d5;
+    border-radius: 6px;
     font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border: 1px solid #009688;
+    box-shadow: 0 0 4px rgba(0, 150, 136, 0.3);
 }
 
 textarea {
     resize: vertical;
 }
 
+
 button {
     display: block;
-    margin: 20px auto 0;
+    margin: 25px auto 0;
     padding: 10px 25px;
-    background: #fff;
-    border: 1px solid #888;
-    border-radius: 20px;
+    background: #009688;
+    border: none;
+    color: white;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.2s;
+    font-size: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 150, 136, 0.3);
 }
 
 button:hover {
-    background: #f0f0f0;
+    background: #00796b;
+    transform: translateY(-2px);
 }

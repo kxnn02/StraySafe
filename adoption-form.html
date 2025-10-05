@@ -14,37 +14,39 @@
 <body>
 
     <div class="container">
-        <button class="back-btn">← Back</button>
+        <div class="form-box">
+            <h2>Adopt Pet Form</h2>
+            <div class="content">
 
-        <div class="container">
-            <div class="form-box">
-                <h2>Adopt Pet Form</h2>
-                <div class="content">
+                <a href="adoption.html" class="back-btn">← Back</a>
 
                     <div class="photo">
-                        <label for="adopt-pet" class="photo-pet">
-                            <div class="photo-placeholder"></div>
-                        </label>
+                        <img src="https://placehold.co/150x150" alt="Pet photo" class="photo-placeholder">
                     </div>
-
                     <form class="lost-pet-form">
                         <fieldset>
-                            <legend>Pet Information</legend>
-                            <input type="text" placeholder="Name" required>
-                            <input type="text" placeholder="Contact" required>
+                            <legend>Adopter Info</legend>
+
+                            <label for="name">Name</label>
+                            <input id="name" type="text" placeholder="Name" required>
+
+                            <label for="contact">Contact</label>
+                            <input id="contact" type="text" placeholder="Contact" required>
                         </fieldset>
 
                         <fieldset>
                             <legend>Reason To Adopt</legend>
-                            <textarea placeholder="Why do you want to adopt?" rows="5" required></textarea>
+
+                            <label for="reason">Why do you want to adopt?</label>
+                            <textarea id="reason" placeholder="Write here" rows="5" required></textarea>
                         </fieldset>
 
                         <button type="submit">Submit</button>
                     </form>
 
-                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
