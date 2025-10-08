@@ -1,0 +1,120 @@
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 950px;
+    margin: 40px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.back-btn {
+    display: inline-block;
+    background: #009688;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0, 150, 136, 0.3);
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.back-btn:hover {
+    background: #00796b;
+    transform: translateY(-2px);
+}
+
+
+.adopt-content {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.pet-card {
+    background: #e0f2f2;
+    padding: 25px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pet-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #c6e6e6;
+    border: 2px solid #009688;
+    margin-bottom: 10px;
+}
+
+.status {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.status-text {
+    color: #006d68;
+    font-weight: bold;
+}
+
+.pet-card a {
+    display: inline-block;
+    background: #009688;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 150, 136, 0.3);
+}
+
+.pet-card a:hover {
+    background: #00796b;
+    transform: translateY(-2px);
+}
+
+
+.pet-info {
+    flex: 1;
+    min-width: 300px;
+    background: #f3f8f8;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 6px solid #009688;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pet-info h2 {
+    color: #006d68;
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #009688;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.label {
+    color: #004d40;
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 15px;
+}

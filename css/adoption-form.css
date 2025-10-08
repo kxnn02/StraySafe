@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-box {
+    background: #ffffff;
+    border: 1.5px solid #2F7C7B;
+    border-radius: 12px;
+    padding: 30px 40px;
+    width: 500px;
+    box-shadow: 0px 4px 12px rgba(47, 124, 123, 0.2);
+}
+
+ h2 {
+    text-align: center;
+    color: #2F7C7B;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+    
+.photo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.photo-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #2F7C7B;
+}
+
+fieldset {
+    border: 1.5px solid #2F7C7B;
+    border-radius: 10px;
+    padding:  15px 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    color: #2F7C7B;
+    font-weight: 600;
+     font-size: 16px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #2F7C7B;
+    box-shadow: 0 0 5px rgba (47, 124, 123, 0.4);
+}
+
+button[type="submit"] {
+    background-color: #2F7C7B;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] :hover {
+    background-color: #256a69;
+}
