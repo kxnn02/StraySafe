@@ -1,31 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registered Pets - StraySafe</title>
-  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/global.css" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <style>
-    .pet-card {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    body {
+      background: #f7f8fa;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: #333;
+    }
+
+    /* Container */
     #pets-container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
+    }
+
+    /* Grid layout for cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    /* Card */
+    .pet-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: 0.2s ease;
+      height: auto;
+    }
+
+    .pet-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Image */
+    .pet-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .no-image {
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 180px;
+      font-size: 2rem;
+      color: #888;
+      flex-shrink: 0;
+    }
+
+    /* Details section */
+    .pet-details {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: auto;
+    }
+
+    .pet-details h2 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      color: #222;
+    }
+
+    .pet-details p {
+      margin: 6px 0;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+
+    /* Services section */
+    .services-section {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .services-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #666;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .service-item.available {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .service-item.unavailable {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .service-icon {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .service-name {
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h1>Registered Pets</h1>
-    <div id="pets-container">Loading...</div>
-  </div>
+  <a href="index.html" class="back-home-btn">← Back to Home</a>
+  <h1>Registered Pets</h1>
+  <div id="pets-container">Loading...</div>
+
+  <!-- Your main JS file -->
   <script src="js/supabase-integration.js"></script>
 </body>
 </html>
