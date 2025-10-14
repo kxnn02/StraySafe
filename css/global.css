@@ -126,5 +126,22 @@ a {
     color: var(--color-text);
 }
 
+.back-home-btn {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transition: background 0.2s;
+}
+.back-home-btn:hover {
+  background: var(--color-secondary);
+}
+
 
 

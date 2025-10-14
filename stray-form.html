@@ -10,9 +10,10 @@
 
 </head>
 <body>
+  <a href="index.html" class="back-home-btn">← Back to Home</a>
   <div class="form-container">
     <h1>Report a Stray</h1>
-    <form>
+    <form id="stray-report-form">
       <fieldset>
         <legend>Stray Information</legend>
 
@@ -31,7 +32,7 @@
         <textarea id="condition" name="condition" rows="4" placeholder="Describe the stray’s condition, injuries, or behavior"></textarea>
 
         <label for="stray-photo">Upload Photo</label>
-        <input type="file" id="stray-photo" name="stray-photo" accept="image/*" required>
+        <input type="file" id="stray-photo" name="stray-photo" accept="image/*">
       </fieldset>
 
       <fieldset>
