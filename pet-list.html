@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Pets - StraySafe</title>
+  <link rel="stylesheet" href="css/global.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    .pet-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #pets-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Registered Pets</h1>
+    <div id="pets-container">Loading...</div>
+  </div>
+  <script src="js/supabase-integration.js"></script>
+</body>
+</html>
