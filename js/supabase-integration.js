@@ -206,7 +206,7 @@ function displayPets(pets, container) {
             </div>
         `;
 
-        // ✅ Added Sponsor & Adopt buttons
+        // ✅ Buttons for sponsor and adopt
         const actions = document.createElement('div');
         actions.classList.add('actions');
 
@@ -285,7 +285,6 @@ function displayStrays(strays, container) {
             ${img}
             <div class="stray-details">
                 <div class="stray-title">
-                    ${stray.species}
                     <span class="species-badge">${stray.species}</span>
                 </div>
                 <div class="info-row">
@@ -310,7 +309,7 @@ function displayStrays(strays, container) {
             </div>
         `;
 
-        // ✅ Added Sponsor & Adopt buttons
+        // ✅ Buttons for sponsor and adopt
         const actions = document.createElement('div');
         actions.classList.add('actions');
 
@@ -368,16 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const petForm = document.querySelector('#pet-registration-form');
     const strayForm = document.querySelector('#stray-report-form');
 
-    if (petForm) {
-        petForm.addEventListener('submit', handlePetRegistration);
-        console.log('Pet registration form ready');
-    }
-
-    if (strayForm) {
-        strayForm.addEventListener('submit', handleStrayReport);
-        console.log('Stray report form ready');
-    }
-
+    if (petForm) petForm.addEventListener('submit', handlePetRegistration);
+    if (strayForm) strayForm.addEventListener('submit', handleStrayReport);
     if (document.getElementById('pets-container')) loadPets();
     if (document.getElementById('strays-container')) loadStrays();
 });
