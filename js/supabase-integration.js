@@ -51,7 +51,7 @@ async function handlePetRegistration(event) {
 
         showMessage('success', `${petData.pet_name} has been registered successfully!`);
         setTimeout(() => {
-            window.location.href = 'pet-list.html'; // redirect after success
+            window.location.href = 'pet-list.html';
         }, 1500);
     } catch (error) {
         console.error(error);
@@ -96,7 +96,7 @@ async function handleStrayReport(event) {
 
         showMessage('success', 'Stray report submitted successfully!');
         setTimeout(() => {
-            window.location.href = 'strays-list.html'; // redirect after success
+            window.location.href = 'strays-list.html';
         }, 1500);
     } catch (error) {
         console.error(error);
@@ -170,7 +170,6 @@ function displayPets(pets, container) {
             ? `<img src="${pet.photo_url}" class="pet-image">`
             : `<div class="pet-image no-image">🐾</div>`;
 
-        // Create services display with indicators
         const services = [
             { name: 'Kapon', available: pet.kapon },
             { name: 'ARV', available: pet.arv },
@@ -198,7 +197,6 @@ function displayPets(pets, container) {
                 <p><strong>Species:</strong> ${pet.species}</p>
                 <p><strong>Age:</strong> ${pet.age}</p>
                 <p><strong>Gender:</strong> ${pet.gender}</p>
-                
                 <div class="services-section">
                     <div class="services-title">Veterinary Services</div>
                     <div class="services-grid">
@@ -207,6 +205,22 @@ function displayPets(pets, container) {
                 </div>
             </div>
         `;
+
+        // ✅ Added Sponsor & Adopt buttons
+        const actions = document.createElement('div');
+        actions.classList.add('actions');
+
+        const sponsorBtn = document.createElement('button');
+        sponsorBtn.textContent = 'Sponsor Treatment';
+        sponsorBtn.onclick = () => window.location.href = 'sponsor.html';
+
+        const adoptBtn = document.createElement('button');
+        adoptBtn.textContent = 'Adopt Me';
+        adoptBtn.onclick = () => window.location.href = 'adopt.html';
+
+        actions.appendChild(sponsorBtn);
+        actions.appendChild(adoptBtn);
+        card.appendChild(actions);
 
         grid.appendChild(card);
     });
@@ -247,7 +261,6 @@ function displayStrays(strays, container) {
             ? `<img src="${stray.photo_url}" class="stray-image">`
             : `<div class="stray-image no-image">📷</div>`;
 
-        // Create services display with indicators
         const services = [
             { name: 'Kapon', available: stray.kapon },
             { name: 'ARV', available: stray.arv },
@@ -296,6 +309,22 @@ function displayStrays(strays, container) {
                 </div>
             </div>
         `;
+
+        // ✅ Added Sponsor & Adopt buttons
+        const actions = document.createElement('div');
+        actions.classList.add('actions');
+
+        const sponsorBtn = document.createElement('button');
+        sponsorBtn.textContent = 'Sponsor Treatment';
+        sponsorBtn.onclick = () => window.location.href = 'sponsor.html';
+
+        const adoptBtn = document.createElement('button');
+        adoptBtn.textContent = 'Adopt Me';
+        adoptBtn.onclick = () => window.location.href = 'adopt.html';
+
+        actions.appendChild(sponsorBtn);
+        actions.appendChild(adoptBtn);
+        card.appendChild(actions);
 
         grid.appendChild(card);
     });
