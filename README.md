@@ -152,7 +152,7 @@ Bachelor of Science in Information Technology
 
 Developed by:
 - Kenneth Clein T. Fernandez  
-- [Add other team members here if any]
+- Andrei Baguisa
 
 ---
 
